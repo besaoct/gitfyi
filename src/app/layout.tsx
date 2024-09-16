@@ -7,8 +7,6 @@ export const metadata: Metadata = {
 };
 
 
-const font = ''
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -17,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${font.className} antialiased`}
+        className={`antialiased `}
       >
         {children}
       </body>
