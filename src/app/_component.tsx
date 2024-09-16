@@ -76,7 +76,7 @@ export default function Homepage() {
 <div className="border-b pb-4 border-neutral-500/20 p-4  sm:max-w-xl mx-auto sm:text-center container w-full">
  <h1 className="text-5xl mb-4 font-extrabold text-teal-600">gitfyi.</h1>
  <p className="text-neutral-400">free API to organize and showcase your GitHub projects effortlessly.</p>
-<div className="mt-2 flex gap-2 w-full justify-center items-center lowercase font-mono">
+<div className="mt-2 flex flex-wrap gap-2 w-full justify-start sm:justify-center items-center lowercase font-mono">
 <a 
     href="https://github.com/besaoct/gitfyi" 
     target="_blank" 
@@ -102,6 +102,14 @@ export default function Homepage() {
     className="bg-neutral-700 rounded px-2 hover:bg-neutral-600 text-white"
   >
     Star
+  </a>
+  <a 
+    href="https://github.com/besaoct/gitfyi/pulls" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="bg-neutral-700 rounded px-2 hover:bg-neutral-600 text-white"
+  >
+    Contribute
   </a>
 </div>
  </div>
@@ -164,12 +172,12 @@ export default function Homepage() {
        <h1 className="text-xl font-bold w-full text-left text-teal-600">projects</h1>
       <h2 className="py-4 font-bold w-full text-left">projects api url (with github token)</h2>
     
-       <pre className="whitespace-nowrap bg-neutral-950 text-white p-4 rounded mt-4 overflow-x-auto w-full">
+       <pre className="whitespace-nowrap bg-neutral-950 text-white p-4 rounded overflow-x-auto w-full">
        {`${base_url}/api/projects/with-token/${username?username:'[username]'}/${token?token:'[token]'}`}
        </pre>
   
 
-      <p className="mt-4 w-full text-left">response</p>
+      <p className="mt-4 w-full text-left font-bold">response</p>
       {result.length > 0 ? (
         <div className="mt-4 w-full bg-neutral-950 border-neutral-700 text-white p-4 rounded overflow-auto">
           <pre className="whitespace-pre-wrap">
@@ -187,7 +195,7 @@ export default function Homepage() {
 
 
       <div className="mt-4 w-full text-left">
-        <h2 className="">steps to showcase your github projects in your portfolio.</h2>
+        <h2 className="font-bold">steps to showcase your github projects in your portfolio.</h2>
         <ProjectShowcaseDoc url={`${base_url}/api/projects/with-token/${username?username:'[username]'}/${token?token:'[token]'}`}/>
         </div>
       </div>

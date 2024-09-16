@@ -4,7 +4,7 @@
 export default function ProjectShowcaseDoc({url}:{url:string}) {
 
   return (
-    <div className="mt-4 min-h-screen flex items-center justify-center text-sm">
+    <div className="min-h-screen flex items-center justify-center text-sm">
       <div className="w-full shadow-md rounded-lg">
 
         <div className="mt-4 lowercase">
