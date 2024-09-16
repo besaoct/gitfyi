@@ -169,8 +169,8 @@ export default function Homepage() {
 
 
       <div className="flex flex-col items-center justify-center h-auto overflow-y-auto md:max-w-[50%] w-full">
-       <h1 className="text-xl font-bold w-full text-left text-teal-600">projects</h1>
-      <h2 className="py-4 font-bold w-full text-left">projects api url (with github token)</h2>
+       <h1 className="text-xl font-bold w-full text-left text-teal-600">project repos</h1>
+      <h2 className="py-4 font-bold w-full text-left">api url (with github token)</h2>
     
        <pre className="whitespace-nowrap bg-neutral-950 text-white p-4 rounded overflow-x-auto w-full">
        {`${base_url}/api/projects/with-token/${username?username:'[username]'}/${token?token:'[token]'}`}
