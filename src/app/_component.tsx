@@ -73,9 +73,9 @@ export default function Homepage() {
 
   return (
 <>
-<div className="border-b pb-4 border-neutral-500/20 p-4  sm:max-w-xl mx-auto sm:text-center container w-full">
+<div className="border-b pb-4 border-neutral-500/20 p-4  md:max-w-3xl mx-auto sm:text-center container w-full">
  <h1 className="text-5xl mb-4 font-extrabold text-teal-600">gitfyi.</h1>
- <p className="text-neutral-400">free API to organize and showcase your GitHub projects effortlessly.</p>
+ <p className="text-neutral-400">free API to organize and showcase your GitHub profile & project repos effortlessly.</p>
 <div className="mt-2 flex flex-wrap gap-2 w-full justify-start sm:justify-center items-center lowercase font-mono">
 <a 
     href="https://github.com/besaoct/gitfyi" 

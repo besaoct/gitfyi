@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# gitfyi
 
-## Getting Started
+**gitfyi** is a free API that helps you organize and effortlessly showcase your GitHub profile and project repos. With it, you can easily retrieve and display your profile & all project repos in JSON format, making it simple to integrate into your portfolio website.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Fetch GitHub data through a free API.
+- Display profile, project repos with details like name, image, live demo link, code repository, and more.
+- Easily integrate with your portfolio using the returned JSON data.
+
+## Prerequisites
+
+Before using gitfyi, you need:
+
+1. **GitHub Account Username** – Your GitHub username.
+2. **GitHub Token**:
+   - Go to your [GitHub Personal Access Tokens](https://github.com/settings/tokens) page.
+   - Click **Generate new token**.
+   - Select necessary scopes (like `repo` for private repositories or just `public_repo` for public ones).
+   - Copy the token and store it securely.
+
+## How to Use projects repos API
+
+### 1. Create a `project.gitfyi.json` File
+
+In each repository you want to showcase, add a `project.gitfyi.json` file with the following structure:
+
+```json
+[
+  {
+    "name": "Project Name",
+    "img_link": "https://image-link.com",
+    "live_link": "https://live-site-link.com",
+    "code_link": "https://github.com/username/repo",
+    "desc": "A brief description of the project.",
+    "fork_link": "https://github.com/username/repo/fork",
+    "sl_no": "1",
+    "is_finished": true,
+    "start_date": "2024-09-14"
+  }
+]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Fetch Projects Using API
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To get your projects, make a request to the following API:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+https://gitfyi.vercel.app/api/projects/with-token/[your-username]/[your-github-token]
+```
 
-## Learn More
+Replace `[your-username]` and `[your-github-token]` with your GitHub username and token, respectively.
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Example API Response
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The API will return a JSON array like this:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```json
+[
+  {
+    "name": "Project Name",
+    "img_link": "https://image-link.com",
+    "live_link": "https://live-site-link.com",
+    "code_link": "https://github.com/username/repo",
+    "desc": "A brief description of the project.",
+    "fork_link": "https://github.com/username/repo/fork",
+    "sl_no": 1,
+    "is_finished": true,
+    "start_date": "2024-09-14",
+    "createdAt": "2024-08-10T19:10:30Z",
+    "readme_link": "https://github.com/username/repo/blob/main/README.md",
+    "duration": null
+  }
+]
+```
 
-## Deploy on Vercel
+### 4. Display Projects in Your Portfolio
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You can now use this JSON data to display your GitHub projects in your portfolio website with any layout and styling you prefer.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Links
+
+- **Main Repo**: [gitfyi](https://github.com/besaoct/gitfyi)
+- **Contribute**: [Contribute to gitfyi](https://github.com/besaoct/gitfyi/pulls)
+  
